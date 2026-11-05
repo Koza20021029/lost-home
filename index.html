@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="陳禹翰的雜誌小刊。一個臺北人對失鄉、移動與地方感的碎嘴，從新莊、金瓜石走到龍口市場。">
+<meta property="og:title" content="不曾離開的失鄉">
+<meta property="og:description" content="一個臺北人對失鄉、移動與地方感的碎嘴。">
+<meta property="og:image" content="cover.jpg">
+<meta property="og:type" content="book">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23d2502a'/%3E%3C/svg%3E">
+<title>不曾離開的失鄉</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;900&family=LXGW+WenKai+TC:wght@400;700&display=swap">
+<style>
+/* A table under a lamp: the magazine lies open in the middle, read left to right. */
+:root {
+  --table: #dcd6ca;
+  --ink: #1c1b18;
+  --muted: #6b665c;
+  --tarp: #b8441f;
+  --tag: #d2502a;
+  --chip: #efebe2;
+  --serif: "Noto Serif TC", "Songti TC", serif;
+  --hand: "LXGW WenKai TC", "Kaiti TC", serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --table: #1b1916; --ink: #ece6da; --muted: #a59e90; --tarp: #e88a63; --tag: #d2502a; --chip: #2a2621; color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --table: #1b1916; --ink: #ece6da; --muted: #a59e90; --tarp: #e88a63; --tag: #d2502a; --chip: #2a2621; color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; }
+body { background: var(--table); color: var(--ink); font-family: var(--serif); }
+.wrap { min-height: 100%; display: flex; flex-direction: column; align-items: center; gap: 18px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 22px 28px; }
+header { width: 100%; max-width: 1100px; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+header h1 { margin: 0; font-weight: 900; font-size: 1.25rem; letter-spacing: .14em; }
+header .by { font-family: var(--hand); color: var(--muted); font-size: .9rem; letter-spacing: .1em; }
+.stage { position: relative; width: 100%; max-width: 1100px; display: flex; justify-content: center; align-items: center; user-select: none; touch-action: pan-y; }
+.spread { position: relative; display: flex; flex-direction: row; height: min(78vh, calc((100vw - 32px) * 1.42 / 2)); max-height: 820px; filter: drop-shadow(0 18px 30px rgba(0,0,0,.28)) drop-shadow(0 2px 4px rgba(0,0,0,.18)); transition: opacity .18s ease; }
+.spread.fade { opacity: 0; }
+.spread img { height: 100%; width: auto; display: block; background: #f6f5f1; cursor: pointer; }
+
+.spread .gutter { position: absolute; top: 0; bottom: 0; left: 50%; width: 36px; transform: translateX(-50%); pointer-events: none;
+  background: linear-gradient(90deg, rgba(0,0,0,0), rgba(0,0,0,.16) 48%, rgba(0,0,0,.22) 50%, rgba(0,0,0,.16) 52%, rgba(0,0,0,0)); }
+.spread:not(.two) .gutter { display: none; }
+.nav { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 64px; border: 0; background: transparent; color: var(--ink); font-size: 26px; cursor: pointer; border-radius: 6px; font-family: var(--serif); }
+.nav:hover { background: color-mix(in srgb, var(--ink) 8%, transparent); }
+.nav:focus-visible, .chips button:focus-visible { outline: 2px solid var(--tarp); outline-offset: 2px; }
+.nav[disabled] { opacity: .2; cursor: default; }
+.nav.next { right: 0; }
+.nav.prev { left: 0; }
+.bar { width: 100%; max-width: 1100px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.count { font-family: var(--hand); color: var(--muted); letter-spacing: .14em; font-variant-numeric: tabular-nums; font-size: .95rem; }
+.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 8px; max-width: 760px; }
+.chips button { border: 0; background: var(--chip); color: var(--ink); font-family: var(--serif); font-size: .88rem; padding: 6px 10px; border-radius: 3px; cursor: pointer; letter-spacing: .06em; }
+.chips button b { color: var(--tarp); font-weight: 900; margin-right: .4em; }
+.chips button.on { background: var(--tag); color: #fff7f0; }
+.chips button.on b { color: #fff7f0; }
+.hint { font-family: var(--hand); font-size: .82rem; color: var(--muted); letter-spacing: .08em; text-align: center; }
+@media (max-width: 720px) {
+  .spread { height: auto; width: min(100%, 520px); }
+  .spread img { width: 100%; height: auto; }
+  .nav { width: 36px; }
+  .stage { padding-inline: 34px; }
+}
+@media (prefers-reduced-motion: reduce) { .spread { transition: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><h1>不曾離開的失鄉</h1><span class="by">陳禹翰　文字・攝影　B5 雜誌版　共 16 頁</span></header>
+  <div class="stage" id="stage">
+    <button class="nav prev" id="prev" aria-label="上一頁">‹</button>
+    <div class="spread" id="spread"></div>
+    <button class="nav next" id="next" aria-label="下一頁">›</button>
+  </div>
+  <div class="bar">
+    <div class="count" id="count"></div>
+    <nav class="chips" id="chips" aria-label="目次"></nav>
+    <div class="hint">橫排由左往右翻。點右頁或按 → 往下讀，點左頁或按 ← 回上一頁。</div>
+  </div>
+</div>
+<script>
+const P = ["pages/01.jpg", "pages/02.jpg", "pages/03.jpg", "pages/04.jpg", "pages/05.jpg", "pages/06.jpg", "pages/07.jpg", "pages/08.jpg", "pages/09.jpg", "pages/10.jpg", "pages/11.jpg", "pages/12.jpg", "pages/13.jpg", "pages/14.jpg", "pages/15.jpg", "pages/16.jpg"];
+const TOC = [["序", "序", 3], ["一", "戶口名簿上的一行字", 3], ["二", "別人眼中的老房子", 4], ["三", "只要離開臺北，哪裡都是南方", 4], ["四", "爺爺把日子過成了家", 5], ["五", "在龍口停下來", 5], ["六", "誰替地景說故事", 12], ["七", "還沒學會的鄉愁", 13]];
+const N = P.length;
+const spreadEl = document.getElementById('spread'), countEl = document.getElementById('count');
+const chipsEl = document.getElementById('chips');
+let single = matchMedia('(max-width: 720px)').matches;
+let cur = 1; // first page shown
+function spreadOf(p) { // pages in the spread containing p, low number first
+  if (single) return [p];
+  if (p === 1) return [1];
+  const a = p % 2 === 0 ? p : p - 1;
+  return a + 1 <= N ? [a, a + 1] : [a];
+}
+const warm = n => { if (n >= 1 && n <= N) { const i = new Image(); i.src = P[n-1]; } };
+function render() {
+  const pg = spreadOf(cur);
+  spreadEl.classList.toggle('two', pg.length === 2);
+  spreadEl.innerHTML = pg.map(n => `<img src="${P[n-1]}" alt="第 ${n} 頁" data-n="${n}">`).join('') + '<div class="gutter"></div>';
+  countEl.textContent = pg.map(n => String(n).padStart(2, '0')).join('・') + ' ／ ' + String(N).padStart(2, '0');
+  document.getElementById('prev').disabled = pg[0] <= 1;
+  document.getElementById('next').disabled = pg[pg.length - 1] >= N;
+  let active = -1;
+  TOC.forEach((t, i) => { if (t[2] <= pg[pg.length - 1]) active = i; });
+  [...chipsEl.children].forEach((b, i) => b.classList.toggle('on', i === active));
+  for (let k = 1; k <= 3; k++) { warm(pg[pg.length - 1] + k); warm(pg[0] - k); }
+}
+function go(dir) {
+  const pg = spreadOf(cur);
+  const target = dir > 0 ? pg[pg.length - 1] + 1 : pg[0] - 1;
+  if (target < 1 || target > N) return;
+  spreadEl.classList.add('fade');
+  setTimeout(() => { cur = target; render(); spreadEl.classList.remove('fade'); }, 120);
+}
+TOC.forEach(([num, title, page]) => {
+  const b = document.createElement('button');
+  b.innerHTML = (num === '序' ? '' : `<b>${num}</b>`) + title;
+  b.onclick = () => { cur = page; render(); };
+  chipsEl.appendChild(b);
+});
+document.getElementById('next').onclick = () => go(1);
+document.getElementById('prev').onclick = () => go(-1);
+spreadEl.addEventListener('click', e => {
+  const img = e.target.closest('img'); if (!img) return;
+  const pg = spreadOf(cur);
+  if (pg.length === 1) { const r = img.getBoundingClientRect(); go(e.clientX > r.left + r.width / 2 ? 1 : -1); return; }
+  go(+img.dataset.n === pg[1] ? 1 : -1);
+});
+addEventListener('keydown', e => { if (e.key === 'ArrowRight') go(1); if (e.key === 'ArrowLeft') go(-1); });
+let sx = null;
+document.getElementById('stage').addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, {passive: true});
+document.getElementById('stage').addEventListener('touchend', e => {
+  if (sx === null) return; const dx = e.changedTouches[0].clientX - sx; sx = null;
+  if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
+});
+matchMedia('(max-width: 720px)').addEventListener('change', m => { single = m.matches; render(); });
+render();
+</script>
+</body>
+</html>
